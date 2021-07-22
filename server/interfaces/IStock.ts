@@ -1,4 +1,6 @@
 export interface IStock {
   name: string;
-  value: number;
+  buyPrice: number;
+  price?: number;
+  getPrice(date: string);
 }

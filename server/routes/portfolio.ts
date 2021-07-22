@@ -10,16 +10,16 @@ export const portfolioApi = (app: Express) => {
   router.get('/stocks', (req, res) => {
     const data = portfolio.getStocks();
     res.json({
-      message: 'Stocks loaded',
-      data
+      message: 'stocks',
+      data,
     });
-  })
+  });
 
   router.get('/profit', (req, res) => {
-    const data = {};
+    const data = portfolio.getProfit('01/01/2021', '30/01/2021');
     res.json({
-      message: 'Profit loaded',
-      data
+      message: 'profit',
+      data,
     });
-  })
-}
+  });
+};
