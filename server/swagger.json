@@ -1,0 +1,125 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Portfolio server",
+    "description": "Fintual project",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Portfolio",
+      "description": "API for portfolio"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/portfolio/stocks": {
+      "get": {
+          "tags": [
+            "Portfolio"
+          ],
+          "summary": "Get all stocks",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Portfolio-Stocks"
+              }
+            }
+          }
+        }
+    },
+    "/portfolio/profit": {
+      "get": {
+          "tags": [
+            "Portfolio"
+          ],
+          "summary": "Get profit between range of dates",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Portfolio-Profit"
+              }
+            }
+          }
+        }
+    }
+  },
+  "definitions": {
+    "Portfolio-Stocks": {
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "buyPrice": {
+                  "type": "number"
+                }
+              }
+          }
+              
+        }
+      }
+    },
+    "Portfolio-Profit": {
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "details": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "buyPrice": {
+                    "type": "number"
+                  },
+                  "price": {
+                    "type": "number"
+                  }
+                }
+              }   
+            },
+            "profit": {
+              "type": "number"
+            },
+            "invested": {
+              "type": "number"
+            },
+            "annualReturn": {
+              "type": "string"
+            }
+          } 
+        }
+      }
+    }
+  }
+}
