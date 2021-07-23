@@ -1,4 +1,51 @@
-# fintual-task
+# Fintual task
 
-Construct a simple Portfolio class that has a collection of Stocks and a "Profit" method that receives 2 dates and returns the profit of the Portfolio between those dates. Assume each Stock has a "Price" method that receives a date and returns its price.
-Bonus Track: make the Profit method return the "annualized return" of the portfolio between the given dates.
+Fintual task is an api with two routes in order to manage a stock portfolio. Fintual task has been deployed on [Deployed]
+
+## Decisions
+
+- Build a server in order to do easier the way how people could call required functions
+- Buy prices are being returned as a random number between 50 and 900
+- Prices are not using the date parameter to get a price, It just return a price as a random number between buy price - 30 and buy price + 30
+- Portfolio has a limit of ten stocks
+
+## Improvements
+
+- Nice to have some tests
+- Nice to have validations on routes parameters
+- Nice to have a jws token to manage permissions
+
+## Tech
+
+Technologies used for build Fintual task:
+
+- [Node JS]
+- [Express JS]
+- [Typescript]
+
+## Installation
+
+Install the dependencies and devDependencies.
+
+```sh
+cd server
+npm install
+node run dev
+```
+
+For production release:
+
+```sh
+npm run postinstall
+npm run start
+```
+
+## License
+
+MIT
+
+[//]: # 'Links'
+[node js]: https://nodejs.org/es/docs/
+[express js]: http://expressjs.com/
+[typescript]: https://www.typescriptlang.org/
+[deployed]: https://portfolio-eddy-test.herokuapp.com
