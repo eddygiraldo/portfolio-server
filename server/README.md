@@ -1,6 +1,6 @@
 # Portfolio server
 
-Portfolio server is an api with two routes in order to manage a stock portfolio. Portfolio server has been deployed on [Deployed]
+Portfolio server is an api with two routes in order to manage a stock portfolio. Portfolio server has been deployed on [Heroku]
 
 ## Decisions
 
@@ -48,4 +48,4 @@ MIT
 [node js]: https://nodejs.org/es/docs/
 [express js]: http://expressjs.com/
 [typescript]: https://www.typescriptlang.org/
-[deployed]: https://portfolio-eddy-test.herokuapp.com
+[heroku]: https://portfolio-eddy-test.herokuapp.com
