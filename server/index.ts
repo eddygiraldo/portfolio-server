@@ -10,9 +10,9 @@ app.use(express.json());
 portfolioApi(app);
 
 if (process.env.NODE_ENV === 'production') {
-  swaggerDocument.host = `localhost:${PORT}`;
-} else {
   swaggerDocument.host = 'portfolio-eddy-test.herokuapp.com';
+} else {
+  swaggerDocument.host = `localhost:${PORT}`;
 }
 
 app.use('/', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
