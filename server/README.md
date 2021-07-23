@@ -1,6 +1,6 @@
-# Fintual task
+# Portfolio server
 
-Fintual task is an api with two routes in order to manage a stock portfolio. Fintual task has been deployed on [Deployed]
+Portfolio server is an api with two routes in order to manage a stock portfolio. Portfolio server has been deployed on [Deployed]
 
 ## Decisions
 
@@ -17,7 +17,7 @@ Fintual task is an api with two routes in order to manage a stock portfolio. Fin
 
 ## Tech
 
-Technologies used for build Fintual task:
+Technologies used for build Portfolio server:
 
 - [Node JS]
 - [Express JS]
