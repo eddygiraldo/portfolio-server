@@ -5,6 +5,7 @@ const swaggerDocument = require('./swagger.json');
 
 const PORT = 3000;
 const app = express();
+app.use(express.json());
 
 portfolioApi(app);
 

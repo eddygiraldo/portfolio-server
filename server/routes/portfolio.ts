@@ -9,14 +9,21 @@ export const portfolioApi = (app: Express) => {
 
   router.get('/stocks', (req, res) => {
     const data = portfolio.getStocks();
+
     res.json({
       message: 'stocks',
       data,
     });
   });
 
-  router.get('/profit', (req, res) => {
-    const data = portfolio.getProfit('01/01/2021', '30/01/2021');
+  router.post('/profit', (req, res) => {
+    const {
+      body: { startDate, endDate },
+    } = req;
+    console.log({ startDate, endDate });
+
+    const data = portfolio.getProfit(startDate, endDate);
+
     res.json({
       message: 'profit',
       data,

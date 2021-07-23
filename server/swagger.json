@@ -17,47 +17,47 @@
       "description": "API for portfolio"
     }
   ],
-  "schemes": [
-    "http"
-  ],
-  "consumes": [
-    "application/json"
-  ],
-  "produces": [
-    "application/json"
-  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
   "paths": {
     "/portfolio/stocks": {
       "get": {
-          "tags": [
-            "Portfolio"
-          ],
-          "summary": "Get all stocks",
-          "responses": {
-            "200": {
-              "description": "OK",
-              "schema": {
-                "$ref": "#/definitions/Portfolio-Stocks"
-              }
+        "tags": ["Portfolio"],
+        "summary": "Get all stocks",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Portfolio-Stocks"
             }
           }
         }
+      }
     },
     "/portfolio/profit": {
-      "get": {
-          "tags": [
-            "Portfolio"
-          ],
-          "summary": "Get profit between range of dates",
-          "responses": {
-            "200": {
-              "description": "OK",
-              "schema": {
-                "$ref": "#/definitions/Portfolio-Profit"
-              }
+      "post": {
+        "tags": ["Portfolio"],
+        "summary": "Get profit between date range",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "date range between you want to look up",
+            "schema": {
+              "$ref": "#/definitions/Portfolio-Profit-Body"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Portfolio-Profit"
             }
           }
         }
+      }
     }
   },
   "definitions": {
@@ -69,17 +69,16 @@
         "data": {
           "type": "array",
           "items": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "buyPrice": {
-                  "type": "number"
-                }
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "buyPrice": {
+                "type": "number"
               }
+            }
           }
-              
         }
       }
     },
@@ -106,7 +105,7 @@
                     "type": "number"
                   }
                 }
-              }   
+              }
             },
             "profit": {
               "type": "number"
@@ -117,7 +116,19 @@
             "annualReturn": {
               "type": "string"
             }
-          } 
+          }
+        }
+      }
+    },
+    "Portfolio-Profit-Body": {
+      "properties": {
+        "startDate": {
+          "type": "string",
+          "example": "01/01/2021"
+        },
+        "endDate": {
+          "type": "string",
+          "example": "12/31/2021"
         }
       }
     }
